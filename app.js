@@ -6,15 +6,17 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const {ExpressPeerServer} = require('peer');
+// const {ExpressPeerServer} = require('peer');
 
 var app = express();
-const peerServer = ExpressPeerServer(app, {debug: true})
+// const peerServer = ExpressPeerServer(server, {
+// 	path: "/",
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use('/peerjs', peerServer);
+// app.use('/peerjs', peerServer);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
